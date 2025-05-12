@@ -10,8 +10,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
-@Entity
 @NoArgsConstructor
+@Entity
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,8 @@ public class Reserva {
     private LocalDate dataInicio;
     @NotNull
     private LocalDate dataFim;
-    @NotNull
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusReserva status;
 
     @ManyToOne
     @JoinColumn(name = "aluno_id")
